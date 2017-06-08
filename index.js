@@ -20,10 +20,10 @@
  */
 
 // Export these items all to the global namespace.
-console = require('./lib/console');
+console = require('./lib/global/console');
 cheerio = require('cheerio');
 _ = require('lodash');
-redbarn = require('./lib/redbarn');
+redbarn = require('./lib/global/redbarn');
 
 // Extend lodash
 _.mixin({'uuid': require('./lib/lodash/uuid')});
