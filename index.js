@@ -11,7 +11,6 @@
  * Once the bundle is created it should be loaded into the JDK's jjs REPL to
  * ensure that it can be used in redbarn.
  * > jjs
- * jjs> load('nashorn-polyfil.js');
  * jjs> load('redbarn-bundle.js');
  * jjs> // Each of the following commands should print functions or objects
  * jjs> console.log
@@ -20,16 +19,17 @@
  * jjs> cheerio
  */
 
-
-// Place these artifacts directly into the global namespace.
-global.cheerio = require('cheerio');
-global._ = require('lodash');
-global.redbarn = {
-    processors: {}
-};
+// Export these items all to the global namespace.
+console = require('./lib/console');
+cheerio = require('cheerio');
+_ = require('lodash');
+redbarn = require('./lib/redbarn');
 
 // Extend lodash
-_.mixin({ 'uuid': require('./lib/lodash-uuid')});
+_.mixin({'uuid': require('./lib/uuid')});
+_.mixin({'replaceAll': require('./lib/replace-all')});
+_.mixin({'getParams': require('./lib/get-params')});
+_.mixin({'argsToArray': require('./lib/args-to-array')});
 
 // Extend cheerio
-_.extend(global.cheerio.prototype, require('./lib/cheerio-repeat'))
+_.extend(cheerio.prototype, require('./lib/cheerio-repeat'))
