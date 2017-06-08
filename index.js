@@ -26,10 +26,10 @@ _ = require('lodash');
 redbarn = require('./lib/redbarn');
 
 // Extend lodash
-_.mixin({'uuid': require('./lib/uuid')});
-_.mixin({'replaceAll': require('./lib/replace-all')});
-_.mixin({'getParams': require('./lib/get-params')});
-_.mixin({'argsToArray': require('./lib/args-to-array')});
+_.mixin({'uuid': require('./lib/lodash/uuid')});
+_.mixin({'replaceAll': require('./lib/lodash/replace-all')});
+_.mixin({'getParams': require('./lib/lodash/get-params')});
+_.mixin({'argsToArray': require('./lib/lodash/args-to-array')});
 
 // Extend cheerio
-_.extend(cheerio.prototype, require('./lib/cheerio-repeat'))
+_.extend(cheerio.prototype, require('./lib/cheerio/repeat'))
