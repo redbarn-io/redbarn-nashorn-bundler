@@ -63,6 +63,8 @@ modules.xml
 # Sonarlint plugin
 .idea/sonarlint
 
+.idea/
+
 ### Node ###
 # Logs
 logs
