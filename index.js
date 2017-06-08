@@ -1,7 +1,5 @@
 /**
- * This module doesn't have any real functionality as of yet, but it does
- * require a several modules which will be used by Browserify to make a bundle
- * for ScriptEngines like Nashorn.
+ * Loads and extends scripts via Browserify / require into Nashorn.
  *
  * The steps to create a bundle are
  *  > npm install
