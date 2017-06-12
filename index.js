@@ -22,6 +22,7 @@ console = require('./lib/global/console');
 cheerio = require('cheerio');
 _ = require('lodash');
 redbarn = require('./lib/global/redbarn');
+beautify = require('js-beautify').html;
 
 // Extend lodash
 _.mixin({'uuid': require('./lib/lodash/uuid')});
